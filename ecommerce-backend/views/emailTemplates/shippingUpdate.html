@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        .content h1 {
+            color: #333333;
+        }
+        .content p {
+            color: #555555;
+        }
+        .content .tracking-button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .content .tracking-button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #888888;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="YOUR_LOGO_URL" alt="Your Brand">
+        </div>
+        <div class="content">
+            <h1>Your Order is On Its Way!</h1>
+            <p>Dear {{customerName}},</p>
+            <p>We are excited to let you know that your order <strong>#{{orderNumber}}</strong> has been shipped! You can expect your package to arrive soon.</p>
+            
+            <h3>Shipping Details:</h3>
+            <p><strong>Carrier:</strong> {{carrier}}</p>
+            <p><strong>Tracking Number:</strong> {{trackingNumber}}</p>
+            <p><strong>Estimated Delivery Date:</strong> {{estimatedDeliveryDate}}</p>
+            
+            <a href="{{trackingUrl}}" class="tracking-button">Track Your Order</a>
+        </div>
+        <div class="footer">
+            <p>If you have any questions, please contact our support team at <a href="mailto:support@yourcompany.com">support@yourcompany.com</a> or call us at {{contactPhone}}.</p>
+            <p>Thank you for shopping with us!</p>
+            <p>&copy; {{currentYear}} Your Company. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
