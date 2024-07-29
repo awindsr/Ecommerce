@@ -1,15 +1,14 @@
-// db.js
+// config/db.js
 const mongoose = require('mongoose');
 const logger = require('../utils/logger');
-const { DB_URI } = require('./keys');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(DB_URI, {
+    await mongoose.connect(process.env.DB_URI, { // Use environment variable directly
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
+      useCreateIndex: true, // Optional, may be deprecated in newer versions
+      useFindAndModify: false, // Optional, may be deprecated in newer versions
     });
     logger.info('MongoDB connected successfully');
   } catch (error) {

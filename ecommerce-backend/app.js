@@ -1,4 +1,5 @@
 // app.js
+require('dotenv').config(); // Load environment variables from .env file
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -8,12 +9,8 @@ const cors = require('cors');
 const helmet = require('helmet');
 const passport = require('passport');
 const path = require('path');
-const dotenv = require('dotenv');
-const { connectDB } = require('./config/db');
+const connectDB = require('./config/db'); // Ensure path is correct
 const { notFound, errorHandler } = require('./middleware/errorHandlers');
-
-// Load environment variables
-dotenv.config();
 
 // Initialize the app
 const app = express();
@@ -29,7 +26,7 @@ app.use(helmet());
 
 // CORS Configuration
 const corsOptions = {
-  origin: process.env.CLIENT_URL || '*', // Replace '*' with your frontend URL
+  origin: process.env.CLIENT_URL || '*',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 200
